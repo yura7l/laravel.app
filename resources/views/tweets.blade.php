@@ -4,25 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Tweets</title>
 
     <!-- Tailwind -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" rel="stylesheet">
 
 </head>
-<body class="bg-white border-t-8 border-blue-100 bg-blue-500 text-blue-100 pt-20">
+<body class="bg-white border-t-8 border-blue-100 bg-blue-500 pt-20">
 
-<div class="max-w-5xl mx-auto">
-    <h1>Tweets</h1>
-
-    <h2>List of tweets</h2>
+<div class="prose mx-auto">
+    <h1>List of tweets</h1>
     <div class="">
         @foreach($tweets as $tweet)
-            <div class="border-b2 border-blue-500 p-2">
-                <div>{{ $tweet->body }}</div>
+            <div class="border-b-2 border-blue-400 p-2">
+                <div class="text-white">{{ $tweet->body }}</div>
             </div>
         @endforeach
     </div>

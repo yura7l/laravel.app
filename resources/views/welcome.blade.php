@@ -6,14 +6,12 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
         <!-- Tailwind -->
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" />
 
     </head>
-    <body class="bg-white border-t-8 border-blue-500 text-black-500 pt-20">
+    <body class="prose bg-white border-t-8 border-blue-500 text-black-500 pt-20">
 
     <div class="max-w-5xl mx-auto">
         <h1>Hello world!</h1>
