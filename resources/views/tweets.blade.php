@@ -19,6 +19,13 @@
     <h1>Tweets</h1>
 
     <h2>List of tweets</h2>
+    <div class="">
+        @foreach($tweets as $tweet)
+            <div class="border-b2 border-blue-500 p-2">
+                <div>{{ $tweet->body }}</div>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 </body>

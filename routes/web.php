@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Tweet;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ Route::get('/', function () {
 
 // Get all tweets
 Route::get('/tweets', function () {
-    return view('tweets');
+    $tweets = Tweet::all();
+    return view('tweets', ['tweets' => $tweets]);
 })->name('tweets');
 
 // Show the form to create the tweet
