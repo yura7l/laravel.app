@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return 'test';
+});
+
 // Get all tweets
 Route::get('/tweets', function () {
     $tweets = Tweet::all();
