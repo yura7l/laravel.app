@@ -14,13 +14,9 @@
 <body class="bg-white border-t-8 border-blue-500 pt-20">
 
 <div class="prose mx-auto">
-    <h1>List of notes</h1>
-    <div class="">
-        @foreach($data as $note)
-            <div class="border-b-2 border-blue-400 p-2">
-                <a href="/notes/{{ $note->id }}" class="text-blue">{{ $note->body }}</a>
-            </div>
-        @endforeach
+    <h1>Status: {{ $data->status }}</h1>
+    <div class="note p-2">
+        <p>{{ $data->body }}</p>
     </div>
 </div>
 

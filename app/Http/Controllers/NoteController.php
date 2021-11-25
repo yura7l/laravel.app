@@ -49,7 +49,8 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Note::find($id);
+        return view('notes-detail', ['data' => $data]);
     }
 
     /**
