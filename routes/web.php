@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Tweet;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,6 @@ Route::put('/tweets/{tweetId}', function ($tweetId) {
 Route::delete('/tweets/{tweetId}', function ($tweetId) {
 
 });
+
+// Resource route for Notes
+Route::resource('notes', NoteController::class);

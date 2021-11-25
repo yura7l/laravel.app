@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Note;
+use Mockery\Matcher\Not;
 
 class NoteController extends Controller
 {
@@ -13,7 +15,9 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $note = new Note();
+        $data = $note->all();
+        return view('notes', ['data' => $data]);
     }
 
     /**
