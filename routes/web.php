@@ -27,12 +27,12 @@ Route::get('/tweets', function () {
 
 // Show the form to create the tweet
 Route::get('/create-tweet', function () {
-
+    return view('create-tweet');
 });
 
 // Create a tweet - handle a form to create a tweet
-Route::post('/tweets', function () {
-
+Route::post('/tweets', function ($request) {
+    //
 });
 
 // Update a tweet
