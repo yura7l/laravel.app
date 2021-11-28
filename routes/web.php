@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 // Resource route for Tweets
 //Route::resource('tweets', TweetController::class);
+
+// Tweets API
 Route::resource('tweets', TweetAPIController::class);
 
 // Resource route for Notes
