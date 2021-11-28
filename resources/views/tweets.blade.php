@@ -16,10 +16,10 @@
 <div class="prose mx-auto">
     <h1>Create a tweet</h1>
     <div class="">
-        <form action="/tweets" method="post">
+        <form action="/tweets" method="post" class="mb-20">
             @csrf
-            <input type="text" name="body" class="w-full p-2 border-2 border-blue-500 text-black" placeholder="What's happening?">
-            <button type="submit">Tweet</button>
+            <input type="text" name="body" class="w-full p-2 border-2 border-blue-500 text-black mb-2" placeholder="What's happening?">
+            <button type="submit" class="bg-yellow-300 text-gray-800 py-3 px-6 rounded-full">Tweet</button>
         </form>
     </div>
 
