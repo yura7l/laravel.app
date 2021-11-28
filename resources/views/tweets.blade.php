@@ -30,7 +30,7 @@
                 <form class="flex space-x-2 text-white" action="/tweets/{{ $tweet->id }}" method="POST">
                     @csrf
                     @method('PUT')
-                    <input type="text" name="body" value="{{ $tweet->body }}" class="bg-white py-2 px-4 rounded-full text-black">
+                    <input type="text" name="body" value="{{ $tweet->body }}" class="bg-white py-2 px-4 rounded-full text-black w-full">
                     <button type="submit" class="bg-blue-300 text-blue-900 py-3 px-4 rounded-full">Submit</button>
                 </form>
             </div>
