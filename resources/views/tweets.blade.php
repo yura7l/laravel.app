@@ -27,7 +27,12 @@
     <div class="">
         @foreach($tweets as $tweet)
             <div class="border-b-2 border-blue-400 p-2">
-                <div class="text-white">{{ $tweet->body }}</div>
+                <form class="flex space-x-2 text-white" action="/tweets/{{ $tweet->id }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <input type="text" name="body" value="{{ $tweet->body }}" class="bg-white py-2 px-4 rounded-full text-black">
+                    <button type="submit" class="bg-blue-300 text-blue-900 py-3 px-4 rounded-full">Submit</button>
+                </form>
             </div>
         @endforeach
     </div>
