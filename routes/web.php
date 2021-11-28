@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Tweet;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\TweetController;
+use App\Http\Controllers\TweetAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +20,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Resource route for Tweets
+//Route::resource('tweets', TweetController::class);
+
+// Tweets API
+Route::resource('tweets', TweetAPIController::class);
+
+// Resource route for Notes
+Route::resource('notes', NoteController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
