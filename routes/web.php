@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Tweet;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\TweetController;
+use App\Http\Controllers\TweetAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,8 @@ Route::get('/', function () {
 });
 
 // Resource route for Tweets
-Route::resource('tweets', TweetController::class);
+//Route::resource('tweets', TweetController::class);
+Route::resource('tweets', TweetAPIController::class);
 
 // Resource route for Notes
 Route::resource('notes', NoteController::class);
