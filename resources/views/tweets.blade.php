@@ -14,6 +14,15 @@
 <body class="bg-white border-t-8 border-blue-100 bg-blue-500 pt-20">
 
 <div class="prose mx-auto">
+    <h1>Create a tweet</h1>
+    <div class="">
+        <form action="/tweets" method="post">
+            @csrf
+            <input type="text" name="body" class="w-full p-2 border-2 border-blue-500 text-black" placeholder="What's happening?">
+            <button type="submit">Tweet</button>
+        </form>
+    </div>
+
     <h1>List of tweets</h1>
     <div class="">
         @foreach($tweets as $tweet)

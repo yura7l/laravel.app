@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Tweet;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\TweetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,31 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Get all tweets
-Route::get('/tweets', function () {
-    $tweets = Tweet::all();
-    return view('tweets', ['tweets' => $tweets]);
-})->name('tweets');
-
-// Show the form to create the tweet
-Route::get('/create-tweet', function () {
-    return view('create-tweet');
-});
-
-// Create a tweet - handle a form to create a tweet
-Route::post('/tweets', function ($request) {
-    //
-});
-
-// Update a tweet
-Route::put('/tweets/{tweetId}', function ($tweetId) {
-
-});
-
-// Delete a tweet
-Route::delete('/tweets/{tweetId}', function ($tweetId) {
-
-});
+// Resource route for Tweets
+Route::resource('tweets', TweetController::class);
 
 // Resource route for Notes
 Route::resource('notes', NoteController::class);

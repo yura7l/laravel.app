@@ -14,7 +14,8 @@ class TweetController extends Controller
      */
     public function index()
     {
-        //
+        $tweets = Tweet::all();
+        return view('tweets', ['tweets' => $tweets]);
     }
 
     /**
@@ -24,7 +25,7 @@ class TweetController extends Controller
      */
     public function create()
     {
-        //
+        return view('tweets.create');
     }
 
     /**
@@ -35,7 +36,9 @@ class TweetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Tweet::create($data);
+        return redirect('/tweets');
     }
 
     /**
@@ -46,7 +49,8 @@ class TweetController extends Controller
      */
     public function show(Tweet $tweet)
     {
-        //
+        $tweet = Tweet::find($tweet->id);
+        return view('tweets.show', ['tweet' => $tweet]);
     }
 
     /**
@@ -57,7 +61,7 @@ class TweetController extends Controller
      */
     public function edit(Tweet $tweet)
     {
-        //
+        return view('tweets.edit', ['tweet' => $tweet]);
     }
 
     /**
@@ -69,7 +73,9 @@ class TweetController extends Controller
      */
     public function update(Request $request, Tweet $tweet)
     {
-        //
+        $data = $request->all();
+        $tweet->update($data);
+        return redirect('/tweets/'.$tweet->id);
     }
 
     /**
@@ -80,6 +86,7 @@ class TweetController extends Controller
      */
     public function destroy(Tweet $tweet)
     {
-        //
+        $tweet->delete();
+        return redirect('/tweets');
     }
 }
