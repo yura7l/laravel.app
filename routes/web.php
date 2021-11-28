@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Tweet;
-use App\Http\Controllers\NoteController;
-use App\Http\Controllers\TweetController;
-use App\Http\Controllers\TweetAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Resource route for Tweets
-//Route::resource('tweets', TweetController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// Tweets API
-Route::resource('tweets', TweetAPIController::class);
-
-// Resource route for Notes
-Route::resource('notes', NoteController::class);
+require __DIR__.'/auth.php';
